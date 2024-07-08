@@ -14,6 +14,7 @@ class Analytics(BaseSDK):
         self, *,
         request: Optional[Union[operations.RetrieveAnalyticsRequest, operations.RetrieveAnalyticsRequestTypedDict]] = None,
         server_url: Optional[str] = None,
+        timeout_config: Optional[int] = None,
     ) -> operations.RetrieveAnalyticsResponseBody:
         r"""Retrieve analytics for a link, a domain, or the authenticated workspace.
 
@@ -21,6 +22,7 @@ class Analytics(BaseSDK):
 
         :param request: The request object to send.
         :param server_url: Override the default server URL for this method
+        :param timeout_config: Override the default request timeout configuration for this method in milliseconds
         """
         base_url = None
         url_variables = None
@@ -45,6 +47,7 @@ class Analytics(BaseSDK):
                 workspace_id=self.sdk_configuration.globals.workspace_id,
             ),
             security=self.sdk_configuration.security,
+            timeout_config=timeout_config,
         )
         
         http_res = self.do_request(
@@ -94,6 +97,7 @@ class Analytics(BaseSDK):
         self, *,
         request: Optional[Union[operations.RetrieveAnalyticsRequest, operations.RetrieveAnalyticsRequestTypedDict]] = None,
         server_url: Optional[str] = None,
+        timeout_config: Optional[int] = None,
     ) -> operations.RetrieveAnalyticsResponseBody:
         r"""Retrieve analytics for a link, a domain, or the authenticated workspace.
 
@@ -101,6 +105,7 @@ class Analytics(BaseSDK):
 
         :param request: The request object to send.
         :param server_url: Override the default server URL for this method
+        :param timeout_config: Override the default request timeout configuration for this method in milliseconds
         """
         base_url = None
         url_variables = None
@@ -125,6 +130,7 @@ class Analytics(BaseSDK):
                 workspace_id=self.sdk_configuration.globals.workspace_id,
             ),
             security=self.sdk_configuration.security,
+            timeout_config=timeout_config,
         )
         
         http_res = await self.do_request_async(

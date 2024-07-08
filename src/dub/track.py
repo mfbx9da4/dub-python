@@ -14,6 +14,7 @@ class Track(BaseSDK):
         self, *,
         request: Optional[Union[operations.TrackLeadRequestBody, operations.TrackLeadRequestBodyTypedDict]] = None,
         server_url: Optional[str] = None,
+        timeout_config: Optional[int] = None,
     ) -> operations.TrackLeadResponseBody:
         r"""Track a lead
 
@@ -21,6 +22,7 @@ class Track(BaseSDK):
 
         :param request: The request object to send.
         :param server_url: Override the default server URL for this method
+        :param timeout_config: Override the default request timeout configuration for this method in milliseconds
         """
         base_url = None
         url_variables = None
@@ -46,6 +48,7 @@ class Track(BaseSDK):
             ),
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[operations.TrackLeadRequestBody]),
+            timeout_config=timeout_config,
         )
         
         http_res = self.do_request(
@@ -95,6 +98,7 @@ class Track(BaseSDK):
         self, *,
         request: Optional[Union[operations.TrackLeadRequestBody, operations.TrackLeadRequestBodyTypedDict]] = None,
         server_url: Optional[str] = None,
+        timeout_config: Optional[int] = None,
     ) -> operations.TrackLeadResponseBody:
         r"""Track a lead
 
@@ -102,6 +106,7 @@ class Track(BaseSDK):
 
         :param request: The request object to send.
         :param server_url: Override the default server URL for this method
+        :param timeout_config: Override the default request timeout configuration for this method in milliseconds
         """
         base_url = None
         url_variables = None
@@ -127,6 +132,7 @@ class Track(BaseSDK):
             ),
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[operations.TrackLeadRequestBody]),
+            timeout_config=timeout_config,
         )
         
         http_res = await self.do_request_async(
@@ -176,6 +182,7 @@ class Track(BaseSDK):
         self, *,
         request: Optional[Union[operations.TrackSaleRequestBody, operations.TrackSaleRequestBodyTypedDict]] = None,
         server_url: Optional[str] = None,
+        timeout_config: Optional[int] = None,
     ) -> operations.TrackSaleResponseBody:
         r"""Track a sale
 
@@ -183,6 +190,7 @@ class Track(BaseSDK):
 
         :param request: The request object to send.
         :param server_url: Override the default server URL for this method
+        :param timeout_config: Override the default request timeout configuration for this method in milliseconds
         """
         base_url = None
         url_variables = None
@@ -208,6 +216,7 @@ class Track(BaseSDK):
             ),
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[operations.TrackSaleRequestBody]),
+            timeout_config=timeout_config,
         )
         
         http_res = self.do_request(
@@ -257,6 +266,7 @@ class Track(BaseSDK):
         self, *,
         request: Optional[Union[operations.TrackSaleRequestBody, operations.TrackSaleRequestBodyTypedDict]] = None,
         server_url: Optional[str] = None,
+        timeout_config: Optional[int] = None,
     ) -> operations.TrackSaleResponseBody:
         r"""Track a sale
 
@@ -264,6 +274,7 @@ class Track(BaseSDK):
 
         :param request: The request object to send.
         :param server_url: Override the default server URL for this method
+        :param timeout_config: Override the default request timeout configuration for this method in milliseconds
         """
         base_url = None
         url_variables = None
@@ -289,6 +300,7 @@ class Track(BaseSDK):
             ),
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[operations.TrackSaleRequestBody]),
+            timeout_config=timeout_config,
         )
         
         http_res = await self.do_request_async(
@@ -338,6 +350,7 @@ class Track(BaseSDK):
         self, *,
         request: Optional[Union[operations.TrackCustomerRequestBody, operations.TrackCustomerRequestBodyTypedDict]] = None,
         server_url: Optional[str] = None,
+        timeout_config: Optional[int] = None,
     ) -> operations.TrackCustomerResponseBody:
         r"""Track a customer
 
@@ -345,6 +358,7 @@ class Track(BaseSDK):
 
         :param request: The request object to send.
         :param server_url: Override the default server URL for this method
+        :param timeout_config: Override the default request timeout configuration for this method in milliseconds
         """
         base_url = None
         url_variables = None
@@ -370,6 +384,7 @@ class Track(BaseSDK):
             ),
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[operations.TrackCustomerRequestBody]),
+            timeout_config=timeout_config,
         )
         
         http_res = self.do_request(
@@ -419,6 +434,7 @@ class Track(BaseSDK):
         self, *,
         request: Optional[Union[operations.TrackCustomerRequestBody, operations.TrackCustomerRequestBodyTypedDict]] = None,
         server_url: Optional[str] = None,
+        timeout_config: Optional[int] = None,
     ) -> operations.TrackCustomerResponseBody:
         r"""Track a customer
 
@@ -426,6 +442,7 @@ class Track(BaseSDK):
 
         :param request: The request object to send.
         :param server_url: Override the default server URL for this method
+        :param timeout_config: Override the default request timeout configuration for this method in milliseconds
         """
         base_url = None
         url_variables = None
@@ -451,6 +468,7 @@ class Track(BaseSDK):
             ),
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[operations.TrackCustomerRequestBody]),
+            timeout_config=timeout_config,
         )
         
         http_res = await self.do_request_async(

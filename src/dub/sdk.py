@@ -39,7 +39,8 @@ class Dub(BaseSDK):
         url_params: Optional[Dict[str, str]] = None,
         client: Optional[HttpClient] = None,
         async_client: Optional[AsyncHttpClient] = None,
-        retry_config: Optional[Nullable[RetryConfig]] = UNSET
+        retry_config: Optional[Nullable[RetryConfig]] = UNSET,
+        timeout_config: Optional[int] = None
     ) -> None:
         r"""Instantiates the SDK configuring it with the provided parameters.
 
@@ -52,6 +53,7 @@ class Dub(BaseSDK):
         :param client: The HTTP client to use for all synchronous methods
         :param async_client: The Async HTTP client to use for all asynchronous methods
         :param retry_config: The retry configuration to use for all supported methods
+        :param timeout_config: Optional request timeout applied to each operation in milliseconds
         """
         if client is None:
             client = httpx.Client()
@@ -78,8 +80,8 @@ class Dub(BaseSDK):
                 server_url = utils.template_url(server_url, url_params)
     
         _globals = internal.Globals(
-            workspace_id=workspace_id,
-            project_slug=project_slug,
+            workspace_id=utils.get_global_from_env(workspace_id, "WORKSPACE_ID", str),
+            project_slug=utils.get_global_from_env(project_slug, "PROJECT_SLUG", str),
         )
 
         BaseSDK.__init__(self, SDKConfiguration(
@@ -89,7 +91,8 @@ class Dub(BaseSDK):
             security=security,
             server_url=server_url,
             server_idx=server_idx,
-            retry_config=retry_config
+            retry_config=retry_config,
+            timeout_config=timeout_config
         ))
 
         hooks = SDKHooks()
